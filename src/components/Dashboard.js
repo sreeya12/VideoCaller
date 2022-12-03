@@ -1,8 +1,8 @@
-import React, { useState } from "react"
-import { Card, Button, Alert } from "react-bootstrap"
+import React, { useState, useEffect } from "react"
+//import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
-import { Link, useHistory } from "react-router-dom"
 
+import { Link, useHistory } from "react-router-dom"
 import AgoraRTC from "agora-rtc-sdk-ng"
 import {Routes, Route, useNavigate} from 'react-router-dom';
 
@@ -63,13 +63,13 @@ const Dashboard = () => {
         // Set the textContent property of the local video container to the local user id.
         localPlayerContainer.textContent = "Local user " + options.uid;
         // Set the local video container size.
-        localPlayerContainer.style.width = "640px";
-        localPlayerContainer.style.height = "480px";
-        localPlayerContainer.style.padding = "15px 5px 5px 5px";
+        localPlayerContainer.style.width = "600px";
+        localPlayerContainer.style.height = "400px";
+        localPlayerContainer.style.padding = "10px 5px 5px 5px";
         // Set the remote video container size.
-        remotePlayerContainer.style.width = "640px";
-        remotePlayerContainer.style.height = "480px";
-        remotePlayerContainer.style.padding = "15px 5px 5px 5px";
+        remotePlayerContainer.style.width = "600px";
+        remotePlayerContainer.style.height = "400px";
+        remotePlayerContainer.style.padding = "10px 5px 5px 5px";
         // Listen for the "user-published" event to retrieve a AgoraRTCRemoteUser object.
         agoraEngine.on("user-published", async (user, mediaType) => {
             // Subscribe to the remote user when the SDK triggers the "user-published" event.
@@ -150,15 +150,18 @@ const Dashboard = () => {
     };
 
  
-    // useEffect(() => {
+     useEffect(() => {
         startBasicCall();
-    // }, []);
+     }, []);
   return (
-    <div>
-      <div>
+    <div className="style-unlisted">
     <h1>Video Call</h1>
-      <button id="join">Join</button>
-      <button id="leave">Leave</button>
+      <button type="button" class="btn btn-success mr-4" id="join">Join</button>
+      <button type="button" class="btn btn-danger" id="leave">Leave</button>
+      <div className="w-100 mt-2">
+        <button type="button" class="btn btn-primary" variant="link" onClick={handleLogout}>
+          Log Out
+        </button>
       </div>
       </div>
   );
