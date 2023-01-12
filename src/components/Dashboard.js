@@ -32,7 +32,7 @@ const Dashboard = () => {
         // Set the channel name.
         channel: 'Call',
         // Pass your temp token here.
-        token: '007eJxTYCjTXN4rLP8i+PHMZym6dz7+SBVbG5Q892uRlfg9rhwVDU4FhrTkFPNEM8vExJRUIxNTY0NLY0sjUyNzg1QTC9PkZDNDc72u5IZARgZZ4VNMjAwQCOKzMDgn5uQwMAAA/0gdIA==',
+        token: '007eJxTYJCtDBVkvOd+mjeul9s1mNO5YdHavq+zm5X/Hyx/++Swy0UFhrTkFPNEM8vExJRUIxNTY0NLY0sjUyNzg1QTC9PkZDPDq2U9yQ2BjAwySlLMjAwQCOKzMDgn5uQwMAAA8aQd2w==',
         // Set the user ID.
         uid: 0,
     };
